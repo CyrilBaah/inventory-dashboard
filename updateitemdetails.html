@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Inventory Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li class="header">
+                    <a href="index.html">
+                        <span class="icon"><i class="zmdi zmdi-home"></i></span>
+                        <span class="title">
+                            <h2>Inventory</h2>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon"><i class="zmdi zmdi-view-dashboard"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="additem.html">
+                        <span class="icon"><i class="zmdi zmdi-collection-plus"></i></span>
+                        <span class="title">Add item</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="updatequantity.html">
+                        <span class="icon"><i class="zmdi zmdi-chart-donut"></i></span>
+                        <span class="title">Update Quantity</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="updateitemdetails.html" id="active">
+                        <span class="icon"><i class="zmdi zmdi-edit"></i></span>
+                        <span class="title">Update Item Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="removeitem.html">
+                        <span class="icon"><i class="zmdi zmdi-delete"></i></span>
+                        <span class="title">Remove Item</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu();"><i class="zmdi zmdi-menu"></i></div>
+                <h2>Update Item Detail</h2>
+                <div class="user">
+                    <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg"
+                        alt="">
+                </div>
+            </div>
+
+            <div class="products">
+              
+
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
