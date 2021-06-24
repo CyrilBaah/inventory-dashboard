@@ -70,15 +70,15 @@
             <div class="card-container">
                 <div class="card">
                     <h4>Total Number of items</h4>
-                    <span>100</span>
+                    <span id="totalItems"></span>
                 </div>
                 <div class="card">
                     <h4>Items in Stock</h4>
-                    <span>100</span>
+                    <span>NA</span>
                 </div>
                 <div class="card">
                     <h4>Total Number of Categories</h4>
-                    <span>100</span>
+                    <span>NA</span>
                 </div>
             </div>
 
@@ -87,7 +87,6 @@
                     <table>
                         <thead>
                             <tr>
-                                <td>No</td>
                                 <td>Item Name</td>
                                 <td>Description</td>
                                 <td>Category</td>
@@ -95,31 +94,8 @@
                                 <td>Status</td>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Pen</td>
-                                <td>Lorem, ipsum dolor.</td>
-                                <td>Stationary</td>
-                                <td>50</td>
-                                <td><span class="statusgreen"></span></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Pen</td>
-                                <td>Lorem, ipsum dolor.</td>
-                                <td>Stationary</td>
-                                <td>50</td>
-                                <td><span class="statusred"></span></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Pen</td>
-                                <td>Lorem, ipsum dolor.</td>
-                                <td>Stationary</td>
-                                <td>50</td>
-                                <td><span class="statusorange"></span></td>
-                            </tr>
+                        <tbody id="productDetails">
+
                         </tbody>
                     </table>
                 </div>
