@@ -128,7 +128,6 @@ body{
 }
 
 .card-container{
-    position: relative;
     width: 100%;
     padding: 20px;
     display: grid;
@@ -185,3 +184,66 @@ body{
 .products tbody td{
     padding-bottom: 10px;
 }
+
+.message{
+    padding: 20px;
+    text-align: center;
+    display: none;
+    color: green;
+    font-weight: lighter;
+}
+
+.product-item{
+    width: 100%;
+    padding: 20px;
+}
+
+.product-form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+input[type=text] {
+    background-color: white;
+    padding: 1em 1em;
+    margin: 1em;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type=number] {
+    background-color: white;
+    padding: 1em 1em;
+    margin: 1em;
+    border: none;
+    border-radius: 4px;
+}
+
+.product-button{
+        width: 100%;
+        text-align: right;
+}
+
+.product-form select{
+    background-color: white;
+    padding: 1em 1em;
+    margin: 1em;
+    border: none;
+    border-radius: 4px;
+}
+
+.product-button button {
+    background-color: grey;
+    padding: 1em 4em;
+    margin: 1em;
+    border: none;
+    border-radius: 4px;
+}
+
+.product-button button:hover {
+    background-color: rgb(87, 82, 82);
+}
+
+

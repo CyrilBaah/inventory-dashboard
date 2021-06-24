@@ -68,13 +68,32 @@
             </div>
 
             <div class="products">
-              
+                    <div class="message">
+                        <p>Item has been added successfully</p>
+                    </div>
+
+                <div class="product-item">
+                    <form onsubmit="return false" class="product-form">
+                        <input type="text" placeholder="Item name">
+                        <input type="text" placeholder="Description">
+                        <select name="category" id="category">
+                            <option value="Stationary">Stationary</option>
+                            <option value="Interior">Interior</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <input type="number" placeholder="Quantity">
+                        <div class="product-button">
+                            <button>Submit</button>
+                        </div>
+                    </form>
+                </div>
 
             </div>
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="./Scripts/app.js"></script>
 </body>
 
 </html>
