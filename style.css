@@ -246,4 +246,28 @@ input[type=number] {
     background-color: rgb(87, 82, 82);
 }
 
+.update-item{
+    width: 100%;
+    padding: 20px;
+}
+
+.update-form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.update-button button {
+    background-color: grey;
+    padding: 1em 4em;
+    margin-left: 7em;
+    border: none;
+    border-radius: 4px;
+    text-align: right;
+}
+
+.update-button button:hover {
+    background-color: rgb(87, 82, 82);
+}
 
