@@ -7,33 +7,39 @@ toggleMenu = () => {
     main.classList.toggle('active');
 }
 
-let inventoryProducts = [{
-        itemName: "Pens",
-        description: "For writing ",
-        category: "Stationary",
-        quantity: 0
-    },
-    {
-        itemName: "Painting",
-        description: "Home Decor - Paintings of Piccaso",
-        category: "Interior",
-        quantity: 15
-    },
-    {
-        itemName: "Dictionary",
-        description: "Collections of words and meanings",
-        category: "Stationary",
-        quantity: 20
-    },
-    {
-        itemName: "Desktop Computer",
-        description: "Technology to enhance work",
-        category: "Electronics",
-        quantity: 20
+storage = () => {
+    if (localStorage.getItem('inventory_db') === null) {
+        let inventoryProducts = [{
+                itemName: "Pens",
+                description: "For writing ",
+                category: "Stationary",
+                quantity: 0
+            },
+            {
+                itemName: "Painting",
+                description: "Home Decor - Paintings of Piccaso",
+                category: "Interior",
+                quantity: 15
+            },
+            {
+                itemName: "Dictionary",
+                description: "Collections of words and meanings",
+                category: "Stationary",
+                quantity: 20
+            },
+            {
+                itemName: "Desktop Computer",
+                description: "Technology to enhance work",
+                category: "Electronics",
+                quantity: 20
+            }
+        ];
+        localStorage.setItem('inventory_db', JSON.stringify(inventoryProducts));
     }
-]
+};
 
-let products = localStorage.setItem('inventory_db', JSON.stringify(inventoryProducts));
+storage();
+
 let productData = localStorage.getItem('inventory_db');
 let inventoryDB = JSON.parse(productData);
 document.getElementById('totalItems').innerText = inventoryDB.length;
