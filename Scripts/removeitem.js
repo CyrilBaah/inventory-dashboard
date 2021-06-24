@@ -17,22 +17,23 @@ let clearInput = () => {
 let productData = localStorage.getItem('inventory_db');
 let inventoryDB = JSON.parse(productData);
 
-updateQuantity = () => {
+removeItem = () => {
     let inputs = document.getElementsByTagName("input")
     const itemName = inputs[0].value.toUpperCase()
-    const quantity = parseInt(inputs[1].value)
 
+
+    let found = false;
     for (let i = 0; i < inventoryDB.length; i++) {
         if (inventoryDB[i].itemName == itemName) {
-            inventoryDB[i].quantity = quantity
-            alert('Quantity Updated');
+            inventoryDB.splice(i, 1)
+            found = true;
         }
     }
     localStorage.setItem('inventory_db', JSON.stringify(inventoryDB));
     clearInput()
-    alert('Invalid Item');
+    alert('Removed')
 }
 
 
 let submitBtn = document.getElementById("submitBtn")
-submitBtn.addEventListener("click", updateQuantity)
+submitBtn.addEventListener("click", removeItem)

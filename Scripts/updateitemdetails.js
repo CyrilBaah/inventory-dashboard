@@ -20,19 +20,19 @@ let inventoryDB = JSON.parse(productData);
 updateItemDetails = () => {
     let inputs = document.getElementsByTagName("input")
     const itemName = inputs[0].value.toUpperCase()
-    const description = parseInt(inputs[1].value)
+    const quantity = inputs[1].value.toUpperCase()
 
+
+    let found = false;
     for (let i = 0; i < inventoryDB.length; i++) {
         if (inventoryDB[i].itemName == itemName) {
-            inventoryDB[i].description = description;
-            alert('Item updated successfully');
-            clearInput()
-            return
+            inventoryDB[i].description = quantity
+            found = true;
         }
     }
     localStorage.setItem('inventory_db', JSON.stringify(inventoryDB));
-    clearInput()
-    alert('Invalid item')
+    clearInput();
+    alert('invalid Item');
 }
 
 
