@@ -77,7 +77,9 @@ dashboard = () => {
     for (let i = 0; i < inventoryDB.length; i++) {
         tableData(inventoryDB, i);
     }
-    statusIndicator()
+    statusIndicator();
 }
 
-dashboard()
+dashboard();
+
+

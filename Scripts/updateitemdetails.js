@@ -20,19 +20,9 @@ let inventoryDB = JSON.parse(productData);
 updateItemDetails = () => {
     let inputs = document.getElementsByTagName("input")
     const itemName = defaultInput(inputs[0].value);
-    const quantity = defaultInput(inputs[1].value);
+    const description = defaultInput(inputs[1].value);
 
-
-    let found = false;
-    for (let i = 0; i < inventoryDB.length; i++) {
-        if (inventoryDB[i].itemName == itemName) {
-            inventoryDB[i].description = quantity;
-            found = true;
-        }
-    }
-    localStorage.setItem('inventory_db', JSON.stringify(inventoryDB));
-    clearInput();
-    alert('Description Updated');
+    itemChecker(itemName, description);
 }
 
 
@@ -43,4 +33,19 @@ defaultInput = (input) => {
     const str = input;
     const str2 = str.charAt(0).toUpperCase() + str.slice(1);
     return str2;
+};
+
+itemChecker = (name, desc) => {
+    for (let i = 0; i < inventoryDB.length; i++) {
+        if (inventoryDB[i].itemName == name) {
+            inventoryDB[i].description = desc;
+            localStorage.setItem('inventory_db', JSON.stringify(inventoryDB));
+            document.getElementsByClassName('message')[0].style.display = 'block';
+            return document.getElementById('msg').innerHTML = 'Updated Successfully';
+
+        }
+    }
+    document.getElementsByClassName('message')[0].style.display = 'block';
+    document.getElementsByClassName('message')[0].style.color = 'red';
+    return document.getElementById('msg').innerHTML = 'Fields are blanks';
 };

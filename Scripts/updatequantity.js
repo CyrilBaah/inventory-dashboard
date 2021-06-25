@@ -20,18 +20,11 @@ let inventoryDB = JSON.parse(productData);
 updateQuantity = () => {
     let inputs = document.getElementsByTagName("input")
     const itemName = defaultInput(inputs[0].value);
-    const quantity = parseInt(inputs[1].value)
+    const quantity = parseInt(inputs[1].value);
 
-    for (let i = 0; i < inventoryDB.length; i++) {
-        if (inventoryDB[i].itemName == itemName) {
-            inventoryDB[i].quantity = quantity
-
-        }
-    }
-    localStorage.setItem('inventory_db', JSON.stringify(inventoryDB));
+    itemChecker(itemName, quantity);
     clearInput();
-    document.getElementsByClassName('message')[0].style.display = 'block';
-    document.getElementById('msg').innerHTML = 'Quantity updated Successfully';
+
 }
 
 
@@ -42,4 +35,19 @@ defaultInput = (input) => {
     const str = input;
     const str2 = str.charAt(0).toUpperCase() + str.slice(1);
     return str2;
+};
+
+itemChecker = (name, quantity) => {
+    for (let i = 0; i < inventoryDB.length; i++) {
+        if (inventoryDB[i].itemName == name) {
+            inventoryDB[i].quantity = quantity;
+            localStorage.setItem('inventory_db', JSON.stringify(inventoryDB));
+            document.getElementsByClassName('message')[0].style.display = 'block';
+            return document.getElementById('msg').innerHTML = 'Updated Successfully';
+
+        }
+    }
+    document.getElementsByClassName('message')[0].style.display = 'block';
+    document.getElementsByClassName('message')[0].style.color = 'red';
+    return document.getElementById('msg').innerHTML = 'Fields are blanks';
 };
