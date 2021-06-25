@@ -25,12 +25,13 @@ updateQuantity = () => {
     for (let i = 0; i < inventoryDB.length; i++) {
         if (inventoryDB[i].itemName == itemName) {
             inventoryDB[i].quantity = quantity
-            document.getElementsByClassName('message')[0].style.display = 'block'
-            document.getElementById('msg').innerHTML = 'jsdl';
+
         }
     }
     localStorage.setItem('inventory_db', JSON.stringify(inventoryDB));
-    clearInput()
+    clearInput();
+    document.getElementsByClassName('message')[0].style.display = 'block';
+    document.getElementById('msg').innerHTML = 'Quantity updated Successfully';
 }
 
 

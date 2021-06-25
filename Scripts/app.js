@@ -28,7 +28,7 @@ storage = () => {
                 quantity: 20
             },
             {
-                itemName: "Desktop Computer",
+                itemName: "Desktop computer",
                 description: "Technology to enhance work",
                 category: "Electronics",
                 quantity: 20
