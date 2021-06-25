@@ -19,20 +19,26 @@ let inventoryDB = JSON.parse(productData);
 
 updateQuantity = () => {
     let inputs = document.getElementsByTagName("input")
-    const itemName = inputs[0].value.toUpperCase()
+    const itemName = defaultInput(inputs[0].value);
     const quantity = parseInt(inputs[1].value)
 
     for (let i = 0; i < inventoryDB.length; i++) {
         if (inventoryDB[i].itemName == itemName) {
             inventoryDB[i].quantity = quantity
-            alert('Quantity Updated');
+            document.getElementsByClassName('message')[0].style.display = 'block'
+            document.getElementById('msg').innerHTML = 'jsdl';
         }
     }
     localStorage.setItem('inventory_db', JSON.stringify(inventoryDB));
     clearInput()
-    alert('Invalid Item');
 }
 
 
 let submitBtn = document.getElementById("submitBtn")
-submitBtn.addEventListener("click", updateQuantity)
+submitBtn.addEventListener("click", updateQuantity);
+
+defaultInput = (input) => {
+    const str = input;
+    const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+    return str2;
+};

@@ -8,9 +8,9 @@ toggleMenu = () => {
 }
 
 let clearInput = () => {
-    let inputs = document.getElementsByTagName("input")
+    let inputs = document.getElementsByTagName("input");
     for (x of inputs) {
-        x.value = ""
+        x.value = "";
     }
 }
 
@@ -19,13 +19,14 @@ let inventoryDB = JSON.parse(productData);
 
 addItem = () => {
     let input = document.getElementsByTagName("input");
-    const itemName = input[0].value.toUpperCase();
-    const description = input[1].value.toUpperCase();
+    const itemName = defaultInput(input[0].value);
+    const description = defaultInput(input[1].value);
     const quantity = parseInt(input[2].value);
     const category = document.getElementById("category").value;
 
     if (itemName == "" || description == "" || quantity < 0) {
-        alert("Fill in the empty fields")
+        document.getElementsByClassName('message')[0].style.display = 'block'
+        document.getElementById('msg').innerHTML = 'Fields are blank';
     } else {
         let inputData = {
             itemName,
@@ -35,7 +36,7 @@ addItem = () => {
         }
         inventoryDB.push(inputData);
         localStorage.setItem('inventory_db', JSON.stringify(inventoryDB));
-        alert('Items added successfuly');
+        document.getElementsByClassName('message')[0].style.display = 'block'
     }
 
     clearInput()
@@ -43,3 +44,10 @@ addItem = () => {
 
 let addItemBtn = document.getElementById('submitBtn');
 addItemBtn.addEventListener('click', addItem)
+
+
+defaultInput = (input) => {
+    const str = input;
+    const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+    return str2;
+};

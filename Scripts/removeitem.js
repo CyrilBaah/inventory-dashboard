@@ -18,8 +18,8 @@ let productData = localStorage.getItem('inventory_db');
 let inventoryDB = JSON.parse(productData);
 
 removeItem = () => {
-    let inputs = document.getElementsByTagName("input")
-    const itemName = inputs[0].value.toUpperCase()
+    let inputs = document.getElementsByTagName("input");
+    const itemName = defaultInput(inputs[0].value);
 
 
     let found = false;
@@ -35,5 +35,11 @@ removeItem = () => {
 }
 
 
-let submitBtn = document.getElementById("submitBtn")
-submitBtn.addEventListener("click", removeItem)
+let submitBtn = document.getElementById("submitBtn");
+submitBtn.addEventListener("click", removeItem);
+
+defaultInput = (input) => {
+    const str = input;
+    const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+    return str2;
+};
